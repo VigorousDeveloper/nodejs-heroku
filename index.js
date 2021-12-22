@@ -28,8 +28,8 @@ app.all('*', (req, res) => {
           'Content-Type': 'application/json'
         },
       };
-      break;
     }
+      break;
     case 'POST': {
       options = {
         method: 'POST',
@@ -40,7 +40,17 @@ app.all('*', (req, res) => {
         body: JSON.stringify(req.body),
       };
     }
-
+      break;
+    case 'DELETE': {
+      options = {
+        method: 'DELETE',
+        uri: `http://3.219.48.24:7001${req.url}`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(req.body),
+      };
+    }
   }
 
   rp(options)
