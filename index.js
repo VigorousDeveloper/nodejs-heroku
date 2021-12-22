@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 */
 // mongoose.connect( mongoAtlasUri, {useNewUrlParser: true, useUnifiedTopology: true})
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello World!')
 })
 
