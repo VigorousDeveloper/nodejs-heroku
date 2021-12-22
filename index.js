@@ -55,7 +55,7 @@ app.all('*', (req, res) => {
 
   rp(options)
     .then(function (response) {
-      return res.status(200).send(response);
+      return res.send(response);
     })
     .catch(function (err) {
       return res.status(404).send(err);
