@@ -1,17 +1,24 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors');
 let rp = require('request-promise')
 //const { default: fetch } = require('node-fetch');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors({
+  origin: '*'
+}))
+
 
 const port = process.env.PORT || 3200
 
 app.all('*', (req, res) => {
   let options;
   console.log(req.url, req.method, req.body);
+  // const response = { url: req.url, method: req.method, body: req.body };
+  // return res.send(response)
   switch (req.method) {
     case 'GET': {
       options = {
@@ -33,16 +40,18 @@ app.all('*', (req, res) => {
         body: JSON.stringify(req.body),
       };
     }
+
   }
 
   rp(options)
     .then(function (response) {
-      return res.send(response);
+      return res.status(200).send(response);
     })
     .catch(function (err) {
-      return res.send(err);
+      return res.status(404).send(err);
     });
 })
+
 
 
 app.listen(port, () => {
