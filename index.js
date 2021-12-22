@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const async = require('async')
 let rp = require('request-promise')
 //const { default: fetch } = require('node-fetch');
 
@@ -17,7 +16,7 @@ app.all('*', (req, res) => {
     case 'GET': {
       options = {
         method: 'GET',
-        uri: 'http://3.219.48.24:7001/api/tags',
+        uri: `http://3.219.48.24:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -27,7 +26,7 @@ app.all('*', (req, res) => {
     case 'POST': {
       options = {
         method: 'POST',
-        uri: 'http://localhost:3100/api/tags/post',
+        uri: `http://3.219.48.24:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
