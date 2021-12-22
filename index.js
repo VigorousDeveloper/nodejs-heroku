@@ -47,9 +47,9 @@ app.all('*', (req, res) => {
         uri: `http://3.219.48.24:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(req.body),
+        }
       };
+
     }
   }
 
