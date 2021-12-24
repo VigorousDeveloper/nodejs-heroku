@@ -49,7 +49,17 @@ app.all('*', (req, res) => {
           'Content-Type': 'application/json'
         }
       };
-
+    }
+      break;
+    case 'PUT': {
+      options = {
+        method: 'PUT',
+        uri: `http://54.167.24.82:7001${req.url}`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(req.body),
+      };
     }
   }
 
