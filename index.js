@@ -23,7 +23,7 @@ app.all('*', (req, res) => {
     case 'GET': {
       options = {
         method: 'GET',
-        uri: `http://54.167.24.82:7001${req.url}`,
+        uri: `http://3.87.233.223${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -33,7 +33,7 @@ app.all('*', (req, res) => {
     case 'POST': {
       options = {
         method: 'POST',
-        uri: `http://54.167.24.82:7001${req.url}`,
+        uri: `http://3.87.233.223${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -44,7 +44,7 @@ app.all('*', (req, res) => {
     case 'DELETE': {
       options = {
         method: 'DELETE',
-        uri: `http://54.167.24.82:7001${req.url}`,
+        uri: `http://3.87.233.223${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -54,15 +54,15 @@ app.all('*', (req, res) => {
     case 'PUT': {
       options = {
         method: 'PUT',
-        uri: `http://54.167.24.82:7001${req.url}`,
+        uri: `http://3.87.233.223${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(req.body),
       };
     }
-  }
 
+  }
   rp(options)
     .then(function (response) {
       return res.send(response);
