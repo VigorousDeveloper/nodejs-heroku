@@ -68,7 +68,8 @@ app.all('*', (req, res) => {
       return res.send(response);
     })
     .catch(function (err) {
-      return res.status(404).send(err);
+      let status = err.response.status
+      return res.status(status).send(err.response.data);
     });
 })
 
