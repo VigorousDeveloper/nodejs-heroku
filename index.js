@@ -23,7 +23,7 @@ app.all('*', (req, res) => {
     case 'GET': {
       options = {
         method: 'GET',
-        uri: `http://3.223.82.146:7001${req.url}`,
+        uri: `http://35.172.41.184:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -33,7 +33,7 @@ app.all('*', (req, res) => {
     case 'POST': {
       options = {
         method: 'POST',
-        uri: `http://3.223.82.146:7001${req.url}`,
+        uri: `http://35.172.41.184:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -44,7 +44,7 @@ app.all('*', (req, res) => {
     case 'DELETE': {
       options = {
         method: 'DELETE',
-        uri: `http://3.223.82.146:7001${req.url}`,
+        uri: `http://35.172.41.184:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         }
@@ -54,7 +54,7 @@ app.all('*', (req, res) => {
     case 'PUT': {
       options = {
         method: 'PUT',
-        uri: `http://3.223.82.146:7001${req.url}`,
+        uri: `http://35.172.41.184:7001${req.url}`,
         headers: {
           'Content-Type': 'application/json'
         },
